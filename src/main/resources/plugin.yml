@@ -1,0 +1,6 @@
+name: SimpleManhunt
+version: '${project.version}'
+main: com.imabanana80.simplemanhunt.SimpleManhunt
+api-version: '1.20'
+authors: [Imabanana80]
+description: A super simple minecraft manhunt plugin
