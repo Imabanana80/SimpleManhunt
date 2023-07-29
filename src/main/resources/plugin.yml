@@ -4,3 +4,15 @@ main: com.imabanana80.simplemanhunt.SimpleManhunt
 api-version: '1.20'
 authors: [Imabanana80]
 description: A super simple minecraft manhunt plugin
+commands:
+  runner:
+    description: Check who the runner currently is, without the need for the compass
+  setrunner:
+    description: Set the runner
+    permission: SimpleManhunt.manage
+  addhunter:
+    description: Add a hunter
+    permission: SimpleManhunt.manage
+  removehunter:
+    description: Remove a hunter
+    permission: SimpleManhunt.manage

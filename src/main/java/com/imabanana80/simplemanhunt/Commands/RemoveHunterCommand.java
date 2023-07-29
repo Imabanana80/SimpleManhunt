@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class AddHunterCommand implements CommandExecutor {
+public class RemoveHunterCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (commandSender instanceof Player p){
@@ -20,16 +20,15 @@ public class AddHunterCommand implements CommandExecutor {
                     p.sendMessage(Component.text("Invalid username. Please specify a valid player's username.").color(TextColor.color(0xFF5555)));
                 } else {
                     if (HunterManager.getHunters().contains(hunter)){
-                        p.sendMessage(Component.text(hunter.getName() + " is already a hunter").color(TextColor.color(0xFF5555)));
+                        HunterManager.removeHunter(hunter.getName());
+                        p.sendMessage(Component.text(strings[0] + " is no longer a hunter!"));
+                        hunter.sendMessage(Component.text("You have been removed as a hunter!"));
                     } else {
-                        HunterManager.addHunter(strings[0]);
-                        p.sendMessage(Component.text(strings[0] + " is now a hunter!"));
-                        hunter.sendMessage(Component.text("You are now a hunter!"));
+                        p.sendMessage(Component.text(hunter.getName() + " is already not a hunter").color(TextColor.color(0xFF5555)));
                     }
                 }
-                
             } else {
-                p.sendMessage(Component.text("Incomplete command. Please specify who the hunter to set is, and with a valid username.").color(TextColor.color(0xFF5555)));
+                p.sendMessage(Component.text("Incomplete command. Please specify who the hunter to remove is, and with a valid username.").color(TextColor.color(0xFF5555)));
             }
         }
         return true;

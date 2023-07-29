@@ -1,7 +1,10 @@
 package com.imabanana80.simplemanhunt;
 
+import com.imabanana80.simplemanhunt.Commands.AddHunterCommand;
+import com.imabanana80.simplemanhunt.Commands.RemoveHunterCommand;
+import com.imabanana80.simplemanhunt.Commands.RunnerCommand;
+import com.imabanana80.simplemanhunt.Commands.SetRunnerCommand;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.checkerframework.checker.units.qual.N;
 
 public final class SimpleManhunt extends JavaPlugin {
 
@@ -11,6 +14,11 @@ public final class SimpleManhunt extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         saveDefaultConfig();
+        
+        getCommand("runner").setExecutor(new RunnerCommand());
+        getCommand("setrunner").setExecutor(new SetRunnerCommand());
+        getCommand("addhunter").setExecutor(new AddHunterCommand());
+        getCommand("removehunter").setExecutor(new RemoveHunterCommand());
 
     }
 
