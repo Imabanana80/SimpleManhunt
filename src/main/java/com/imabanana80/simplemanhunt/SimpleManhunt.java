@@ -1,9 +1,6 @@
 package com.imabanana80.simplemanhunt;
 
-import com.imabanana80.simplemanhunt.Commands.AddHunterCommand;
-import com.imabanana80.simplemanhunt.Commands.RemoveHunterCommand;
-import com.imabanana80.simplemanhunt.Commands.RunnerCommand;
-import com.imabanana80.simplemanhunt.Commands.SetRunnerCommand;
+import com.imabanana80.simplemanhunt.Commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SimpleManhunt extends JavaPlugin {
@@ -17,6 +14,7 @@ public final class SimpleManhunt extends JavaPlugin {
         
         getCommand("runner").setExecutor(new RunnerCommand());
         getCommand("setrunner").setExecutor(new SetRunnerCommand());
+        getCommand("hunters").setExecutor(new HuntersCommand());
         getCommand("addhunter").setExecutor(new AddHunterCommand());
         getCommand("removehunter").setExecutor(new RemoveHunterCommand());
 

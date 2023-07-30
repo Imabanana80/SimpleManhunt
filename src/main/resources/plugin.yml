@@ -6,10 +6,12 @@ authors: [Imabanana80]
 description: A super simple minecraft manhunt plugin
 commands:
   runner:
-    description: Check who the runner currently is, without the need for the compass
+    description: Check who the runner currently is
   setrunner:
     description: Set the runner
     permission: SimpleManhunt.manage
+  hunters:
+    description: Check who the hunters currently are
   addhunter:
     description: Add a hunter
     permission: SimpleManhunt.manage
