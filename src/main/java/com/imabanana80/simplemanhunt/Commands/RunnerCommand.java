@@ -14,7 +14,7 @@ public class RunnerCommand implements CommandExecutor {
         if (commandSender instanceof Player p){
             Player runner = RunnerManger.getRunner();
             if (runner == null){
-                p.sendMessage(Component.text("The runner was not properly defined. Please re-define the runner using /setrunner"));
+                p.sendMessage(Component.text("The runner is undefined. Please define the runner using /setrunner"));
             } else {
                 p.sendMessage(Component.text(runner.getName() + " is currently the runner."));
             }

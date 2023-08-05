@@ -1,6 +1,8 @@
 package com.imabanana80.simplemanhunt;
 
 import com.imabanana80.simplemanhunt.Commands.*;
+import com.imabanana80.simplemanhunt.Listeners.PlayerInteractListener;
+import com.imabanana80.simplemanhunt.Listeners.PlayerPortalListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SimpleManhunt extends JavaPlugin {
@@ -12,11 +14,15 @@ public final class SimpleManhunt extends JavaPlugin {
         plugin = this;
         saveDefaultConfig();
         
+        getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerPortalListener(), this);
+        
         getCommand("runner").setExecutor(new RunnerCommand());
         getCommand("setrunner").setExecutor(new SetRunnerCommand());
         getCommand("hunters").setExecutor(new HuntersCommand());
         getCommand("addhunter").setExecutor(new AddHunterCommand());
         getCommand("removehunter").setExecutor(new RemoveHunterCommand());
+        getCommand("tracker").setExecutor(new GiveTrackerCommand());
 
     }
 

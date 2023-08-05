@@ -1,5 +1,6 @@
 package com.imabanana80.simplemanhunt.Commands;
 
+import com.imabanana80.simplemanhunt.Manager.HunterManager;
 import com.imabanana80.simplemanhunt.Manager.RunnerManger;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -10,8 +11,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
 public class SetRunnerCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
@@ -21,7 +20,11 @@ public class SetRunnerCommand implements CommandExecutor {
                 if (runner == null){
                     p.sendMessage(Component.text("Invalid username. Please specify a valid player's username.").color(TextColor.color(0xFF5555)));
                 } else {
+                    if (HunterManager.getHunters().contains(p)){
+                        HunterManager.removeHunter(p.getName());
+                    }
                     RunnerManger.setRunner(strings[0]);
+                    RunnerManger.resetSavedPortals();
                     p.sendMessage(Component.text(strings[0] + " is now the runner!"));
                     runner.sendMessage(Component.text("You are now the runner!"));
                 }

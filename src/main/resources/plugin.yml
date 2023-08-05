@@ -18,3 +18,5 @@ commands:
   removehunter:
     description: Remove a hunter
     permission: SimpleManhunt.manage
+  tracker:
+    description: Give yourself a tracker

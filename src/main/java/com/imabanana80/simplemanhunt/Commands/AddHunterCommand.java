@@ -1,6 +1,7 @@
 package com.imabanana80.simplemanhunt.Commands;
 
 import com.imabanana80.simplemanhunt.Manager.HunterManager;
+import com.imabanana80.simplemanhunt.Manager.RunnerManger;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
@@ -22,6 +23,9 @@ public class AddHunterCommand implements CommandExecutor {
                     if (HunterManager.getHunters().contains(hunter)){
                         p.sendMessage(Component.text(hunter.getName() + " is already a hunter").color(TextColor.color(0xFF5555)));
                     } else {
+                        if (RunnerManger.getRunner().equals(p)){
+                            RunnerManger.setRunner("");
+                        }
                         HunterManager.addHunter(strings[0]);
                         p.sendMessage(Component.text(strings[0] + " is now a hunter!"));
                         hunter.sendMessage(Component.text("You are now a hunter!"));
