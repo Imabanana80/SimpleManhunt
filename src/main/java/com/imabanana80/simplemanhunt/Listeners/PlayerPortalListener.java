@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerPortalEvent;
 
 public class PlayerPortalListener implements Listener {
     @EventHandler
-    public static void onPlayerPortal(PlayerPortalEvent e){
+    public void onPlayerPortal(PlayerPortalEvent e){
         Player runner = RunnerManger.getRunner();
         if (runner != null){
             if (e.getPlayer() == runner) {

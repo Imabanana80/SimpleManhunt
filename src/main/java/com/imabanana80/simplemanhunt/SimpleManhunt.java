@@ -1,8 +1,10 @@
 package com.imabanana80.simplemanhunt;
 
 import com.imabanana80.simplemanhunt.Commands.*;
+import com.imabanana80.simplemanhunt.Listeners.PlayerDeathListener;
 import com.imabanana80.simplemanhunt.Listeners.PlayerInteractListener;
 import com.imabanana80.simplemanhunt.Listeners.PlayerPortalListener;
+import com.imabanana80.simplemanhunt.Listeners.PlayerRespawnListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SimpleManhunt extends JavaPlugin {
@@ -16,6 +18,8 @@ public final class SimpleManhunt extends JavaPlugin {
         
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerPortalListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerRespawnListener(), this);
         
         getCommand("runner").setExecutor(new RunnerCommand());
         getCommand("setrunner").setExecutor(new SetRunnerCommand());

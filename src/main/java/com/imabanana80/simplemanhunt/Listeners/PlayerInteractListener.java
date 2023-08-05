@@ -45,7 +45,10 @@ public class PlayerInteractListener implements Listener {
                         p.sendActionBar(Component.text("The runner is not currently in the end"));
                     }
                     
-                    runner.sendActionBar(Component.text(p.getName() + " is now tracking you"));
+                    if (runner != null){
+                        runner.sendActionBar(Component.text(p.getName() + " is now tracking you"));
+                    }
+                    
                     held.setItemMeta(cmeta);
 
                     SimpleManhunt.getPlugin().getLogger().log(Level.INFO, p.getName() + " refreshed their tracker");

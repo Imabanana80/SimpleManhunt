@@ -22,7 +22,7 @@ public class ItemManager {
 
         CompassMeta cmeta = (CompassMeta) meta;
         cmeta.setLodestoneTracked(false);
-        cmeta.setLodestone(RunnerManger.getRunner().getLocation());
+        cmeta.setLodestone(p.getLocation());
         item.setItemMeta(cmeta);
 
 
