@@ -17,5 +17,5 @@ jobs:
         run: mvn --batch-mode --update-snapshots package
       - uses: actions/upload-artifact@v3
         with:
-          name: SimpleManhunt-devbuild.jar
+          name: SimpleManhunt-devbuild
           path: /home/runner/work/SimpleManhunt/SimpleManhunt/target/SimpleManhunt-devbuild.jar
