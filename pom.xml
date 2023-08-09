@@ -6,7 +6,7 @@
 
     <groupId>com.imabanana80</groupId>
     <artifactId>SimpleManhunt</artifactId>
-    <version>1.0.0-dev</version>
+    <version>devbuild</version>
     <packaging>jar</packaging>
 
     <name>SimpleManhunt</name>
@@ -43,14 +43,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.1</version>
-                <configuration>
-                    <outputDirectory>C:\Users\imaba\Desktop\Minecraft\servers\testing_server\plugins</outputDirectory>
-                </configuration>
             </plugin>
         </plugins>
         <resources>
